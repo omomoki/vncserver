@@ -10,10 +10,20 @@ yum install git -y
 
 ## How to use
 
-You can clone this repository to have access to its scripts:
+You can clone this repository to have access to its script:
 
 ```shell
 git clone https://github.com/omomoki/vncserver.git
+```
+
+then you would `cd` into the cloned directory and run the bash script inside.
+
+## One-liner
+
+You can also just copy this big one-liner command, which combines all the steps above and runs the bash script automatically. Just copy, paste, walk away and come back in 5 minutes and the vncserver should be ready.
+
+```shell
+yum install git -y && git clone https://github.com/omomoki/vncserver.git && cd vncserver && bash setup.sh
 ```
 
 ## Port-forwarding
