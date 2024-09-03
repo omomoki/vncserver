@@ -1,15 +1,16 @@
 #!/bin/bash
-echo "Setting up VCN server..."
+echo "Starting VNC Server setup"
 
-yum groupinstall "Server with GUI" -y
-yum install tigervnc-server -y
+echo "Installing Server with GUI. This may take several minutes... feel free to go grab a coffee."
+sudo dnf groupinstall "Server with GUI" -y
 
-cp /usr/lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@.service
+echo "Installing TigerVNC..."
+sudo dnf install -y tigervnc-server tigervnc-server-module
 
-# set up oracle user
-bash setup_user.sh
+echo "Setting VNC password. Note: this is for the currently logged in user."
+vncpasswd
 
-# vncserver service file
-cp vncserver@.service /etc/systemd/system/vncserver@.service
-systemctl daemon-reload
+# start vncserver on startup
+sudo systemctl enable --now vncserver@:1.service
 
+vncserver
