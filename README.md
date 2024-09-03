@@ -5,7 +5,7 @@
 First, you need to make sure git is installed:
 
 ```shell
-yum install git
+yum install git -y
 ```
 
 ## How to use
