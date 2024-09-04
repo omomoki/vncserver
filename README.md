@@ -39,3 +39,5 @@ ssh -L  5901:localhost:5901 opc@ip.address.of.cloud.compute
 You can use this address to log in:
 
 `localhost:5901`
+
+The port number should change depend on the display number. If display 2 is working, the port sholud be 5902.
